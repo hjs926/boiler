@@ -3,6 +3,7 @@ const app = express();
 const port = 5000;
 const bodyParser = require("body-parser");
 const { User } = require("./models/User");
+const config = require("./config/key");
 
 //applicaition/x-www/form-rulencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 // 몽고 DB 연결, 실패시 에러 출력
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb+srv://hjs926:1234@boiler.vqy2zh3.mongodb.net/test", {
+  .connect(config.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
