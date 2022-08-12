@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10; //salt가 몇글자인지
+const jwt = require("jsonwebtoken");
 
 const userSchema = mongoose.Schema({
   name: {
@@ -51,7 +52,16 @@ userSchema.pre("save", function (next) {
   }
 });
 
-userSchema.methods.comparePassword;
+userSchema.methods.comparePassword = function (plainPassword, cb) {
+  bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+    if (err) return cb(err), cb(null, isMatch);
+  });
+};
+
+userSchema.methods.generateToken = function (cb) {
+  //jwt로 token 생성
+  jwt.sign();
+};
 
 const User = mongoose.model("User", userSchema);
 
