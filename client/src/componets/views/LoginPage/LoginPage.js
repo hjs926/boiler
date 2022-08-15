@@ -12,7 +12,7 @@ function LoginPage() {
     setPassword(event.currentTarget.value);
   };
   const onSubmitHandler = (event) => {
-    // setSubmit(event.currentTarget.value);
+    event.preventDefault();
   };
 
   return (
