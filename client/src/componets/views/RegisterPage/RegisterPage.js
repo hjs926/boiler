@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../../_actions/user.action";
+import { registerUser } from "../../../_actions/user.action";
 import { useNavigate } from "react-router-dom";
 
 function RegisterPage(props) {
@@ -31,16 +31,21 @@ function RegisterPage(props) {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
+    if (Password !== ConfirmPassword) {
+      return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
+    }
+
     let body = {
       email: Email,
+      name: Name,
       password: Password,
     };
 
-    dispatch(loginUser(body)).then((response) => {
-      if (response.payload.loginSuccess) {
-        navigate("/");
+    dispatch(registerUser(body)).then((response) => {
+      if (response.payload.success) {
+        navigate("/login");
       } else {
-        alert("Error");
+        alert("Failed to sign up");
       }
     });
   };
