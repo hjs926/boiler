@@ -7,7 +7,7 @@ export function loginUser(dataTosubmit) {
     .then((response) => response.data);
 
   return {
-    type: "LOGIN_USER",
+    type: LOGIN_USER,
     payload: requset,
   };
 }
@@ -18,7 +18,7 @@ export function registerUser(dataTosubmit) {
     .then((response) => response.data);
 
   return {
-    type: "REGISTER_USER",
+    type: REGISTER_USER,
     payload: requset,
   };
 }

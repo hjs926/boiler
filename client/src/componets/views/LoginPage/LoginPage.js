@@ -1,7 +1,6 @@
-import { Axios } from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../../_actions/user.action";
+import { loginUser } from "../../../_actions/user_action";
 import { useNavigate } from "react-router-dom";
 
 function LoginPage(props) {
