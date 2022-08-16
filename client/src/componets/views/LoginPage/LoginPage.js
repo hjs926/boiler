@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 function LoginPage(props) {
   const dispatch = useDispatch();
+
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   const onEmailHandler = (event) => {
@@ -17,6 +19,7 @@ function LoginPage(props) {
   const onPasswordHandler = (event) => {
     setPassword(event.currentTarget.value);
   };
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -50,10 +53,12 @@ function LoginPage(props) {
       >
         <label>Email</label>
         <input type="email" value={Email} onChange={onEmailHandler} />
+
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
+
         <br />
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
