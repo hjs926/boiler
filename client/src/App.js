@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={Auth(LandingPage, null)} />
-        <Route path="/Login" element={Auth(LoginPage, false)} />
-        <Route path="/Register" element={Auth(RegisterPage, false)} />
+        <Route path="/login" element={Auth(LoginPage, false)} />
+        <Route path="/register" element={Auth(RegisterPage, false)} />
       </Routes>
     </BrowserRouter>
   );

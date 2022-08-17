@@ -12,6 +12,7 @@
   "author": "joon",
   "license": "ISC",
   "dependencies": {
+    "antd": "^4.22.6",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "concurrently": "^7.3.0",
